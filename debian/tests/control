@@ -1,0 +1,34 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets --all-features
+Features: test-name=rust-aliasable:@
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets --no-default-features --features alloc
+Features: test-name=librust-aliasable-dev:alloc
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets 
+Features: test-name=librust-aliasable-dev:default
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets --no-default-features
+Features: test-name=librust-aliasable-dev:
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets --no-default-features --features aliasable_deref_trait
+Features: test-name=librust-aliasable+aliasable-deref-trait-dev:aliasable_deref_trait
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets --no-default-features --features stable_deref_trait
+Features: test-name=librust-aliasable+stable-deref-trait-dev:stable_deref_trait
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aliasable 0.1.3 --all-targets --no-default-features --features traits
+Features: test-name=librust-aliasable+traits-dev:traits
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
